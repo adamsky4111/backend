@@ -43,6 +43,11 @@ class Person
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Group::class, inversedBy="people")
+     */
+    private $group;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +109,18 @@ class Person
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getGroup(): ?Group
+    {
+        return $this->group;
+    }
+
+    public function setGroup(?Group $group): self
+    {
+        $this->group = $group;
 
         return $this;
     }
