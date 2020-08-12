@@ -115,7 +115,7 @@ class Group
     {
         if (!$this->people->contains($person)) {
             $this->people[] = $person;
-            $person->setGroupId($this);
+            $person->setGroup($this);
         }
 
         return $this;
@@ -126,8 +126,8 @@ class Group
         if ($this->people->contains($person)) {
             $this->people->removeElement($person);
             // set the owning side to null (unless already changed)
-            if ($person->getGroupId() === $this) {
-                $person->setGroupId(null);
+            if ($person->getGroup() === $this) {
+                $person->setGroup(null);
             }
         }
 
