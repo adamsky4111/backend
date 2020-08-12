@@ -1,0 +1,13 @@
+App\Entity\Person:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: login
+  properties:
+    firstName:
+      - NotBlank: ~
+    lastName:
+      - NotBlank: ~
+
+App\Entity\Group:
+  properties:
+    name:
+      - NotBlank: ~
